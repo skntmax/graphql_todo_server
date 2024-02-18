@@ -1,8 +1,11 @@
 const { todoModel, userModel } = require("./modals");
 
-const getAllTodos = async (limit) => {
+const getAllTodos = async (pn = 1) => {
   try {
-    let res = await todoModel.find({}).limit(limit);
+    let res = await todoModel
+      .find({})
+      .skip(pn * (pn - 1))
+      .limit(10);
     return res;
   } catch (err) {
     return false;

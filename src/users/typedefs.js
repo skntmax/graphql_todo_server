@@ -23,7 +23,7 @@ type todo{
  type Query {
    count:count
    hello: String
-   getTodo(limit:String): [todo]
+   getTodo(pn:Int): [todo]
    getTodoById(id:ID!):todo
    getTodoByUserId(id:ID!):[todo]
    getAllUsers:[users]

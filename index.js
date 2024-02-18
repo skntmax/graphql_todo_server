@@ -33,7 +33,7 @@ async function initAppoloServer() {
 
   const resolvers = {
     Query: {
-      getTodo: async (root, limit) => await getAllTodos(limit),
+      getTodo: async (root, { pn }) => await getAllTodos(pn),
       getTodoById: async (root, id) => await getAllTodoById(id),
       getTodoByUserId: async (root, id) => await getTodoByUserId(id),
       getAllUsers: async () => await getAllUsers(),
